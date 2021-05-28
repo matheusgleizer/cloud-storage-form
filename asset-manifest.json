@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/cloud-storage-form/static/css/main.bd5e5ebb.chunk.css",
+    "main.js": "/cloud-storage-form/static/js/main.5d987db3.chunk.js",
+    "main.js.map": "/cloud-storage-form/static/js/main.5d987db3.chunk.js.map",
+    "runtime-main.js": "/cloud-storage-form/static/js/runtime-main.bdaa0311.js",
+    "runtime-main.js.map": "/cloud-storage-form/static/js/runtime-main.bdaa0311.js.map",
+    "static/js/2.96f06b13.chunk.js": "/cloud-storage-form/static/js/2.96f06b13.chunk.js",
+    "static/js/2.96f06b13.chunk.js.map": "/cloud-storage-form/static/js/2.96f06b13.chunk.js.map",
+    "static/js/3.17bf20fb.chunk.js": "/cloud-storage-form/static/js/3.17bf20fb.chunk.js",
+    "static/js/3.17bf20fb.chunk.js.map": "/cloud-storage-form/static/js/3.17bf20fb.chunk.js.map",
+    "index.html": "/cloud-storage-form/index.html",
+    "static/css/main.bd5e5ebb.chunk.css.map": "/cloud-storage-form/static/css/main.bd5e5ebb.chunk.css.map",
+    "static/js/2.96f06b13.chunk.js.LICENSE.txt": "/cloud-storage-form/static/js/2.96f06b13.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.bdaa0311.js",
+    "static/js/2.96f06b13.chunk.js",
+    "static/css/main.bd5e5ebb.chunk.css",
+    "static/js/main.5d987db3.chunk.js"
+  ]
+}
