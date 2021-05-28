@@ -10,6 +10,12 @@ const Step4 = (props) => {
     else if (key === "gigabytes") parameterUnity = "GB";
     else if (key === "price") parameterUnity = "$";
 
+    if (props.values.upfrontPayment === "Yes") {
+      props.values.price = 0.9 * (2 * props.values.gigabytes);
+    } else {
+      props.values.price = 2 * props.values.gigabytes;
+    }
+
     return (
       <div className='display-data'>
         <label>{key.toUpperCase()}: &nbsp;</label>
@@ -19,12 +25,6 @@ const Step4 = (props) => {
       </div>
     );
   });
-
-  if (props.values.upfrontPayment === "Yes") {
-    props.values.price = 0.9 * (2 * props.values.gigabytes);
-  } else {
-    props.values.price = 2 * props.values.gigabytes;
-  }
 
   return (
     <div className='order-review'>

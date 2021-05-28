@@ -15,7 +15,7 @@
         border: 1px solid rgba(0,0,0,.2);
         border-radius: 25px;
         padding: 0;
-        overflow-x: hidden;
+        overflow: hidden;
         background-color: white;
 
         .form-header{
@@ -29,12 +29,15 @@
             font-size: 3vh;
             font-weight: 600;
             letter-spacing: .004em;
+            
                        
         }
 
 
         .step-content{
-            overflow-wrap: break-word;
+            overflow-y:scroll;
+            overflow-x: hidden;
+            height: inherit;
             padding: 1% 10%;
        
             .input-label{
