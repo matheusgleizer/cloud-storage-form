@@ -4,10 +4,8 @@ import {Field} from "formik";
 import {TextField} from "formik-material-ui";
 
 const Step2 = (props) => {
-  console.log(props.errors);
   if (props.currentStep !== 2) return null;
   var disabled = true;
-  console.log(props.values);
   if (
     props.values.firstName &&
     props.values.lastName &&
@@ -20,40 +18,42 @@ const Step2 = (props) => {
   )
     disabled = false;
 
+  const step2Map = [
+    {
+      label: "First name:",
+      name: "firstName",
+      type: "text",
+    },
+    {
+      label: "Last name:",
+      name: "lastName",
+      type: "text",
+    },
+    {
+      label: "Email:",
+      name: "email",
+      type: "email",
+    },
+    {
+      label: "Address:",
+      name: "address",
+      type: "text",
+    },
+  ];
+
   return (
     <div>
-      <Field
-        className='form-field'
-        fullWidth
-        component={TextField}
-        name='firstName'
-        type='text'
-        label='First name:'
-      />
-      <Field
-        className='form-field'
-        fullWidth
-        component={TextField}
-        name='lastName'
-        type='text'
-        label='Last name:'
-      />
-      <Field
-        className='form-field'
-        fullWidth
-        component={TextField}
-        name='email'
-        type='email'
-        label='Email:'
-      />
-      <Field
-        className='form-field'
-        fullWidth
-        component={TextField}
-        name='address'
-        type='text'
-        label='Address:'
-      />
+      {step2Map.map(({label, name, type}) => (
+        <div>
+          <Field
+            className='form-field'
+            fullWidth
+            component={TextField}
+            name={name}
+            type={type}
+            label={label}></Field>
+        </div>
+      ))}
 
       <div className='footer-button'>
         <Button

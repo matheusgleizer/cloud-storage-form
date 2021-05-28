@@ -17,32 +17,37 @@ const Step3 = (props) => {
   )
     disabled = false;
 
+  const step3Map = [
+    {
+      label: "Credit card number:",
+      name: "cardNumber",
+      type: "number",
+    },
+    {
+      label: "Expiration date:",
+      name: "expiration",
+      type: "date",
+    },
+    {
+      label: "Security code:",
+      name: "securityCode",
+      type: "number",
+    },
+  ];
+
   return (
     <div>
-      <Field
-        className='form-field'
-        fullWidth
-        component={TextField}
-        name='cardNumber'
-        type='number'
-        label='Credit card number:'
-      />
-      <Field
-        className='form-field'
-        fullWidth
-        component={TextField}
-        name='expiration'
-        type='date'
-        label='Expiration date:'
-      />
-      <Field
-        className='form-field'
-        fullWidth
-        component={TextField}
-        name='securityCode'
-        type='number'
-        label='Security code:'
-      />
+      {step3Map.map(({label, name, type}) => (
+        <div>
+          <Field
+            className='form-field'
+            fullWidth
+            component={TextField}
+            name={name}
+            type={type}
+            label={label}></Field>
+        </div>
+      ))}
 
       <div className='footer-button'>
         <Button

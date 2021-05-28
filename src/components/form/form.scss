@@ -29,7 +29,6 @@
             font-size: 3vh;
             font-weight: 600;
             letter-spacing: .004em;
-            font-family: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif;
                        
         }
 
@@ -47,10 +46,6 @@
                 border-radius: 5px;
                 padding: 15px;
                 
-
-                // .form-field{
-                //     margin: 2% 0;
-                // }
             }
 
             .form-field{
@@ -72,12 +67,12 @@
                 text-align: center;
 
                 .display-data{
-                    div{
+                
                         display: flex;
                         flex-direction: row;
                         align-items: center;
                         
-                    }
+
                 }
             }
         }

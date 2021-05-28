@@ -1,64 +1,53 @@
 import React from "react";
-import {
-  Button,
-  FormControl,
-  InputLabel,
-  Select,
-  MenuItem,
-  FormHelperText,
-  Container,
-} from "@material-ui/core";
-import {palette} from "@material-ui/system";
+import {Button, InputLabel, Select, MenuItem} from "@material-ui/core";
 import {Field} from "formik";
 
 const Step1 = (props) => {
   if (props.currentStep !== 1) return null;
   console.log(props.values);
 
+  const step1Map = [
+    {
+      label: "Duration:",
+      name: "duration",
+      items: [3, 6, 12],
+      itemsType: "Months",
+    },
+    {
+      label: "Amount of gigabytes in a cloud:",
+      name: "gigabytes",
+      items: [3, 5, 10, 20, 30, 50],
+      itemsType: "GB",
+    },
+    {
+      label: "Upfront payment:",
+      name: "upfrontPayment",
+      items: ["Yes", "No"],
+      itemsType: "",
+    },
+  ];
+
   return (
     <div>
-      <InputLabel className='input-label'>Duration:</InputLabel>
-      <Field
-        as={Select}
-        className='input-area'
-        fullWidth
-        name='duration'
-        type='number'
-        defaultValue={props.values.duration}>
-        <MenuItem value='3'>3 Months</MenuItem>
-        <MenuItem value='6'>6 Months</MenuItem>
-        <MenuItem value='12'>12 Months</MenuItem>
-      </Field>
-
-      <InputLabel className='input-label'>
-        Amount of gigabytes in a cloud:
-      </InputLabel>
-      <Field
-        as={Select}
-        className='input-area'
-        fullWidth
-        name='gigabytes'
-        type='number'
-        defaultValue={props.values.gigabytes}>
-        <MenuItem value='3'>3 GB</MenuItem>
-        <MenuItem value='5'>5 GB</MenuItem>
-        <MenuItem value='10'>10 GB</MenuItem>
-        <MenuItem value='20'>20 GB</MenuItem>
-        <MenuItem value='30'>30 GB</MenuItem>
-        <MenuItem value='50'>50 GB</MenuItem>
-      </Field>
-
-      <InputLabel className='input-label'>Upfront payment:</InputLabel>
-      <Field
-        as={Select}
-        className='input-area'
-        fullWidth
-        name='upfrontPayment'
-        type='number'
-        defaultValue={props.values.upfrontPayment}>
-        <MenuItem value='No'>No</MenuItem>
-        <MenuItem value='Yes'>Yes</MenuItem>
-      </Field>
+      {step1Map.map(({label, name, items, itemsType}) => (
+        <div>
+          <InputLabel className='input-label'>{label}</InputLabel>
+          <Field
+            id={name}
+            as={Select}
+            className='input-area'
+            fullWidth
+            name={name}
+            type='number'
+            defaultValue={props.values.name}>
+            {items.map((value) => (
+              <MenuItem value={value}>
+                {value} {itemsType}
+              </MenuItem>
+            ))}
+          </Field>
+        </div>
+      ))}
 
       <div className='footer-button'>
         <Button
