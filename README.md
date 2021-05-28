@@ -1,4 +1,4 @@
-#Cloud Storage Form
+# Cloud Storage Form
 
 A form with 4 steps to subscribe to a Cloud Storage Platform.
 
