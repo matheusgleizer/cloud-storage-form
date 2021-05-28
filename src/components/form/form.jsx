@@ -6,6 +6,7 @@ import Step1 from "./step1/step1";
 import Step2 from "./step2/step2";
 import Step3 from "./step3/step3";
 import Step4 from "./step4/step4";
+import Congratulation from "./congratulation/congratulation";
 import "./form.scss";
 import {validationSchema} from "./validationSchema";
 
@@ -19,6 +20,15 @@ const theme = createMuiTheme({
     },
   },
 });
+
+const handleSubmit = async (values) => {
+  console.log(values);
+  await fetch("https://httpbin.org/post", {
+    method: "post",
+    headers: {"Content-Type": "application/json"},
+    body: JSON.stringify(values),
+  });
+};
 
 function FormContainer() {
   const [currentStep, setStep] = useState(1);
@@ -36,14 +46,10 @@ function FormContainer() {
         cardNumber: "",
         expiration: "",
         securityCode: "",
+        price: "",
       }}
       validationSchema={validationSchema}
-      onSubmit={(values, {setSubmitting}) => {
-        setTimeout(() => {
-          setSubmitting(false);
-          alert(JSON.stringify(values, null, 2));
-        }, 500);
-      }}>
+      onSubmit={handleSubmit}>
       {({errors, values, handleChange}) => (
         <ThemeProvider theme={theme}>
           <Form className='main-form'>
@@ -75,6 +81,7 @@ function FormContainer() {
                   errors={errors}
                   values={values}
                 />
+                <Congratulation currentStep={currentStep} />
               </div>
             </Container>
           </Form>

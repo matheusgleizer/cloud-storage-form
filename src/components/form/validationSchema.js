@@ -1,5 +1,5 @@
 import * as yup from "yup";
-var valid = require("card-validator");
+// var valid = require("card-validator");
 
 
 const validationSchema = yup.object({

@@ -4,7 +4,6 @@ import {Field} from "formik";
 import {TextField} from "formik-material-ui";
 
 const Step3 = (props) => {
-  console.log(props.errors);
   if (props.currentStep !== 3) return null;
   var disabled = true;
   if (

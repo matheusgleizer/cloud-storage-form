@@ -34,6 +34,7 @@
 
 
         .step-content{
+            overflow-wrap: break-word;
             padding: 1% 10%;
        
             .input-label{
@@ -67,11 +68,11 @@
                 text-align: center;
 
                 .display-data{
-                
-                        display: flex;
-                        flex-direction: row;
-                        align-items: center;
-                        
+                    display: flex;
+                    flex-wrap: wrap;
+                    flex-direction: row;
+                    align-items: center;
+                    font-size: 0.9rem;
 
                 }
             }
