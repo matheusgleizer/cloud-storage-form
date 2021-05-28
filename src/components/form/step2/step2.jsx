@@ -1,9 +1,10 @@
 import React from "react";
-import {Button, Container} from "@material-ui/core";
+import {Button} from "@material-ui/core";
 import {Field} from "formik";
 import {TextField} from "formik-material-ui";
 
 const Step2 = (props) => {
+  console.log(props.errors);
   if (props.currentStep !== 2) return null;
   var disabled = true;
   console.log(props.values);
@@ -12,7 +13,10 @@ const Step2 = (props) => {
     props.values.lastName &&
     props.values.email &&
     props.values.address &&
-    !props.errors.entries
+    !props.errors.firstName &&
+    !props.errors.lastName &&
+    !props.errors.email &&
+    !props.errors.address
   )
     disabled = false;
 
@@ -31,7 +35,7 @@ const Step2 = (props) => {
         fullWidth
         component={TextField}
         name='lastName'
-        type='lastName'
+        type='text'
         label='Last name:'
       />
       <Field

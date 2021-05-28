@@ -56,8 +56,8 @@ const Step1 = (props) => {
         name='upfrontPayment'
         type='number'
         defaultValue={props.values.upfrontPayment}>
-        <MenuItem value={0}>No</MenuItem>
-        <MenuItem value={1}>Yes</MenuItem>
+        <MenuItem value='No'>No</MenuItem>
+        <MenuItem value='Yes'>Yes</MenuItem>
       </Field>
 
       <div className='footer-button'>

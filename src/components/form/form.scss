@@ -67,6 +67,20 @@
                 }
                 
             }
+
+            .order-review{
+                text-align: center;
+
+                .display-data{
+                    div{
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+                        
+                    }
+                }
+            }
         }
     }
 }
+
