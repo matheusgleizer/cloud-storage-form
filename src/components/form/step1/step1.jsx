@@ -1,5 +1,5 @@
 import React from "react";
-import {Button, InputLabel, Select, MenuItem} from "@material-ui/core";
+import {InputLabel, Select, MenuItem} from "@material-ui/core";
 import {Field} from "formik";
 
 const Step1 = (props) => {
@@ -48,16 +48,6 @@ const Step1 = (props) => {
           </Field>
         </div>
       ))}
-
-      <div className='footer-button'>
-        <Button
-          color='primary'
-          variant='contained'
-          size='medium'
-          onClick={() => props.setStep(2)}>
-          Next
-        </Button>
-      </div>
     </div>
   );
 };

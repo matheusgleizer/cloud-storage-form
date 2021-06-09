@@ -1,22 +1,9 @@
 import React from "react";
-import {Button} from "@material-ui/core";
 import {Field} from "formik";
 import {TextField} from "formik-material-ui";
 
 const Step2 = (props) => {
   if (props.currentStep !== 2) return null;
-  var disabled = true;
-  if (
-    props.values.firstName &&
-    props.values.lastName &&
-    props.values.email &&
-    props.values.address &&
-    !props.errors.firstName &&
-    !props.errors.lastName &&
-    !props.errors.email &&
-    !props.errors.address
-  )
-    disabled = false;
 
   const step2Map = [
     {
@@ -54,25 +41,6 @@ const Step2 = (props) => {
             label={label}></Field>
         </div>
       ))}
-
-      <div className='footer-button'>
-        <Button
-          color='primary'
-          variant='contained'
-          size='medium'
-          onClick={() => props.setStep(1)}>
-          Back
-        </Button>
-
-        <Button
-          color='primary'
-          variant='contained'
-          size='medium'
-          disabled={disabled}
-          onClick={() => props.setStep(3)}>
-          Next
-        </Button>
-      </div>
     </div>
   );
 };

@@ -1,7 +1,14 @@
 import React, {useState} from "react";
 import {Formik, Form} from "formik";
-import {Container, createMuiTheme, ThemeProvider} from "@material-ui/core";
+import {
+  Container,
+  createMuiTheme,
+  ThemeProvider,
+  Button,
+} from "@material-ui/core";
 import blue from "@material-ui/core/colors/blue";
+import ButtonBackward from "./buttons/button-backward";
+import ButtonForward from "./buttons/button-forward";
 import Step1 from "./step1/step1";
 import Step2 from "./step2/step2";
 import Step3 from "./step3/step3";
@@ -21,17 +28,17 @@ const theme = createMuiTheme({
   },
 });
 
-const handleSubmit = async (values) => {
-  console.log(values);
-  await fetch("https://httpbin.org/post", {
-    method: "post",
-    headers: {"Content-Type": "application/json"},
-    body: JSON.stringify(values),
-  });
-};
-
 function FormContainer() {
   const [currentStep, setStep] = useState(1);
+
+  const handleSubmit = async (values) => {
+    console.log(values);
+    await fetch("https://httpbin.org/post", {
+      method: "post",
+      headers: {"Content-Type": "application/json"},
+      body: JSON.stringify(values),
+    }).then(setStep(currentStep + 1));
+  };
 
   return (
     <Formik
@@ -82,6 +89,18 @@ function FormContainer() {
                   values={values}
                 />
                 <Congratulation currentStep={currentStep} />
+                <ButtonForward
+                  currentStep={currentStep}
+                  setStep={setStep}
+                  error={errors}
+                  values={values}
+                />
+                <ButtonBackward
+                  currentStep={currentStep}
+                  setStep={setStep}
+                  error={errors}
+                  values={values}
+                />
               </div>
             </Container>
           </Form>

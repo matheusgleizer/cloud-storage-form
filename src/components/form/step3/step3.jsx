@@ -1,20 +1,9 @@
 import React from "react";
-import {Button} from "@material-ui/core";
 import {Field} from "formik";
 import {TextField} from "formik-material-ui";
 
 const Step3 = (props) => {
   if (props.currentStep !== 3) return null;
-  var disabled = true;
-  if (
-    props.values.cardNumber &&
-    props.values.expiration &&
-    props.values.securityCode &&
-    !props.errors.cardNumber &&
-    !props.errors.expiration &&
-    !props.errors.securityCode
-  )
-    disabled = false;
 
   const step3Map = [
     {
@@ -47,25 +36,6 @@ const Step3 = (props) => {
             label={label}></Field>
         </div>
       ))}
-
-      <div className='footer-button'>
-        <Button
-          color='primary'
-          variant='contained'
-          size='medium'
-          onClick={() => props.setStep(2)}>
-          Back
-        </Button>
-
-        <Button
-          color='primary'
-          variant='contained'
-          size='medium'
-          disabled={disabled}
-          onClick={() => props.setStep(4)}>
-          Next
-        </Button>
-      </div>
     </div>
   );
 };

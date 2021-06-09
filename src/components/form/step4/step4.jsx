@@ -1,5 +1,4 @@
 import React from "react";
-import {Button} from "@material-ui/core";
 
 const Step4 = (props) => {
   if (props.currentStep !== 4) return null;
@@ -30,25 +29,6 @@ const Step4 = (props) => {
     <div className='order-review'>
       <h3>Order Review</h3>
       {displayValues}
-
-      <div className='footer-button'>
-        <Button
-          color='primary'
-          variant='contained'
-          size='medium'
-          onClick={() => props.setStep(3)}>
-          Back
-        </Button>
-
-        <Button
-          color='primary'
-          variant='contained'
-          size='medium'
-          type='submit'
-          onClick={() => props.setStep(5)}>
-          Submit
-        </Button>
-      </div>
     </div>
   );
 };
